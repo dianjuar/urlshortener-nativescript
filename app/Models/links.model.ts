@@ -1,4 +1,4 @@
-export interface Links {
+export interface Link {
 	long: string;
 	short: string;
 }

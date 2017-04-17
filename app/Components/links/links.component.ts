@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Links } from '../../Models/links.model';
+import { Link } from '../../Models/links.model';
 
 @Component({
 	selector: 'links',
