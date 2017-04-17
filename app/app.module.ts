@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 
 // Componets
 import { LinksComponent } from "./Components/links/links.component";
+import { ShrinkLinkComponent } from "./Components/shrink-link/shrink-link.component";
 
 // Services
 
@@ -18,7 +19,8 @@ import { LinksComponent } from "./Components/links/links.component";
     ],
     declarations: [
         AppComponent,
-        LinksComponent
+        LinksComponent,
+        ShrinkLinkComponent
     ],
     providers: [
     ],

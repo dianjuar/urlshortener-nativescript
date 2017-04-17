@@ -4,6 +4,7 @@ import { Routes } from "@angular/router";
 
 // Componets
 import { LinksComponent } from "./Components/links/links.component";
+import { ShrinkLinkComponent } from "./Components/shrink-link/shrink-link.component";
 
 // Services
 
@@ -11,6 +12,7 @@ import { LinksComponent } from "./Components/links/links.component";
 const routes: Routes = [
     { path: "", redirectTo: "/links", pathMatch: "full" },
     { path: "links", component: LinksComponent },
+    { path: "shrink-url", component: ShrinkLinkComponent },
 ];
 
 @NgModule({
