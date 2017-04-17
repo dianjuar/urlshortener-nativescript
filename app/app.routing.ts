@@ -9,8 +9,8 @@ import { LinksComponent } from "./Components/links/links.component";
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "/urls", pathMatch: "full" },
-    { path: "urls", component: LinksComponent },
+    { path: "", redirectTo: "/links", pathMatch: "full" },
+    { path: "links", component: LinksComponent },
 ];
 
 @NgModule({
