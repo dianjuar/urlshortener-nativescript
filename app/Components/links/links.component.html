@@ -1,3 +1,14 @@
 <ActionBar title="URL Shorterer" class="action-bar">
     <ActionItem text="New URL" ios.position="rigth"> </ActionItem>
 </ActionBar>
+
+<GridLayaout class="page">
+    <ListView [items]="urls">
+        <ng-template let-url="item" let-i="index" let-odd="odd" let-even="even">
+            <StackLayout class="list-group-item">
+                <Label text="{{url.short}}" class="h2"></Label>
+                <Label text="{{url.long}}"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayaout>

@@ -9,13 +9,26 @@ import { Link } from '../../Models/links.model';
 })
 
 export class LinksComponent implements OnInit {
-	constructor() { }
 
-	ngOnInit() {
-		
+	/**
+	 * List of Links shown on the main view
+	 */
+	public urls: Array<Link>;
+
+	constructor() {
+		this.urls = new Array<Link>();
 	}
 
-	nothing(){
+	ngOnInit() {
+		this.urls.push(
+			<Link>({
+				long: 'Lorem',
+				short: 'Lorem',
+			})
+		);
+	}
+
+	nothing() {
 		console.log("tap");
 	}
 }
