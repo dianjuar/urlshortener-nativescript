@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
     "nativescript-angular": "~1.5.1",
+    "nativescript-couchbase": "^1.0.17",
     "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~5.2.0",
