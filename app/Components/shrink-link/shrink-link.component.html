@@ -1,1 +1,13 @@
-<Label class="shrink-link" text="Hello ShrinkLinkComponent!"></Label>
+<ActionBar title="Shrink URL" icon="" class="action-bar">
+    <NavigationButton text="Back" android.systemIcon="ic_menu_back" [nsRouterLink]="['/links']"></NavigationButton>
+</ActionBar>
+
+<StackLayout class="form">
+    <StackLayout class="input-field">
+        <Label text="Long URL:" class="label"></Label>
+        <TextField hint="Introduce your URL to shrink" class="input input-border" autocapitaliztionType="none" [(ngModel)]="longUrl"></TextField>
+    </StackLayout>
+    <StackLayout>
+        <Label text="The long URL obove will be shrunken using TinyURL shortening servie" textWrap="true" class="footnote text-center"></Label>
+    </StackLayout>
+</StackLayout>

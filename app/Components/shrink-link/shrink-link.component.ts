@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class ShrinkLinkComponent implements OnInit {
 
+	public longUrl: string;
+
 	constructor() { }
 
 	ngOnInit() { }
