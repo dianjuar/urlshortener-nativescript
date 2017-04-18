@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from "@angular/common";
 
 import { Link } from '../../Models/links.model';
 
@@ -15,11 +16,20 @@ export class LinksComponent implements OnInit {
 	 */
 	public urls: Array<Link>;
 
-	constructor() {
+	constructor(private _location: Location) {
 		this.urls = new Array<Link>();
 	}
 
 	ngOnInit() {
+		this._location.subscribe(() => {
+			this.urls = new Array<Link>();
+			this._loadData();
+		});
+
+		this._loadData();
+	}
+
+	private _loadData() {
 		this.urls.push(
 			<Link>({
 				long: 'Lorem',

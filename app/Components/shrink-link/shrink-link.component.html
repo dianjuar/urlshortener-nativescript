@@ -6,8 +6,9 @@
     <StackLayout class="input-field">
         <Label text="Long URL:" class="label"></Label>
         <TextField hint="Introduce your URL to shrink" class="input input-border" autocapitaliztionType="none" [(ngModel)]="longUrl"></TextField>
+        <Label text="The long URL obove will be shrunken using TinyURL shortening servie" textWrap="true" class="footnote text-center"></Label>
     </StackLayout>
     <StackLayout>
-        <Label text="The long URL obove will be shrunken using TinyURL shortening servie" textWrap="true" class="footnote text-center"></Label>
+        <Button text="Shrink" class="btn btn-primary" (tap)="goAndShrink()"></Button>
     </StackLayout>
 </StackLayout>
