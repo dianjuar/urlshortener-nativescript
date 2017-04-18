@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShrinkUrlService } from '../../Services/shrink-url.service';
 
 @Component({
 	selector: 'shrink-link',
@@ -11,7 +12,8 @@ export class ShrinkLinkComponent implements OnInit {
 
 	public longUrl: string;
 
-	constructor() { }
+	constructor(private _shrinkURL: ShrinkUrlService) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+	}
 }
