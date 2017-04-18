@@ -13,6 +13,7 @@ import { ShrinkLinkComponent } from "./Components/shrink-link/shrink-link.compon
 
 // Services
 import { ShrinkUrlService } from "./Services/shrink-url.service";
+import { DataBaseService } from "./Services/database.service";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ShrinkUrlService } from "./Services/shrink-url.service";
         ShrinkLinkComponent
     ],
     providers: [
-        ShrinkUrlService
+        ShrinkUrlService,
+        DataBaseService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
