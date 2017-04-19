@@ -3,6 +3,8 @@ import { Location } from "@angular/common";
 
 import { Link } from '../../Models/links.model';
 
+import { DataBaseService } from '../../Services/database.service';
+
 @Component({
 	selector: 'links',
 	moduleId: module.id,
@@ -16,7 +18,7 @@ export class LinksComponent implements OnInit {
 	 */
 	public urls: Array<Link>;
 
-	constructor(private _location: Location) {
+	constructor(private _location: Location, private _database: DataBaseService) {
 		this.urls = new Array<Link>();
 	}
 
@@ -30,12 +32,19 @@ export class LinksComponent implements OnInit {
 	}
 
 	private _loadData() {
-		this.urls.push(
+		/*this.urls.push(
 			<Link>({
 				long: 'Lorem',
 				short: 'Lorem',
 			})
-		);
+		);*/
+
+		let rows = this._database.getDatabase().executeQuery("urls");
+
+		for( let i = 0; i < rows.length; i++ ) {
+			this.urls.push(rows[i]);
+		}
+
 	}
 
 	nothing() {

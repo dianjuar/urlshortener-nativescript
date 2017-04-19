@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ShrinkUrlService } from '../../Services/shrink-url.service';
+import { DataBaseService } from '../../Services/database.service';
 
 @Component({
 	selector: 'shrink-link',
@@ -13,7 +14,9 @@ export class ShrinkLinkComponent implements OnInit {
 
 	public longUrl: string;
 
-	constructor(private _shrinkURL: ShrinkUrlService, private _location: Location) { }
+	constructor(private _shrinkURL: ShrinkUrlService,
+		private _location: Location,
+		private _database: DataBaseService) { }
 
 	ngOnInit() {
 	}
@@ -22,9 +25,18 @@ export class ShrinkLinkComponent implements OnInit {
 		console.log("shrinking...");
 
 		this._shrinkURL.shrink(this.longUrl).subscribe(
-			() => {
+			(shortUrl) => {
+				this._writeShortUrlInDataBase(shortUrl);
 				this._location.back();
 			}
 		);
+	}
+
+	private _writeShortUrlInDataBase(shortUrl: string) {
+		this._database.getDatabase().createDocument({
+			type: "url",
+			long: this.longUrl,
+			short: shortUrl
+		});
 	}
 }
